@@ -1,7 +1,8 @@
-import { ContainerPokemons } from "./components/ContainerPokemons";
 import { Navbar } from "./components/Navbar";
 import { useState, useEffect } from "react";
-import { Searcher } from "./components/Searcher";
+import { Pokemons } from "./pages/Pokemons";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PokemonId } from "./pages/PokemonId";
 
 function App() {
   const [dataApi, setDataApi] = useState([]);
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const getData = async () => {
-      const api = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+      const api = "https://pokeapi.co/api/v2/pokemon/?limit=151";
       const response = await fetch(api);
       const data = await response.json();
       setDataApi(data.results);
@@ -23,7 +24,7 @@ function App() {
     getData();
   }, []);
 
-  const returnProducts = () => {
+  const returnPokemons = () => {
     if (search.length > 0) {
       const searchMin = search.toLowerCase();
       const filteredData = dataApi.filter((pokemon) => {
@@ -38,14 +39,31 @@ function App() {
   };
 
   return (
-    <div
-      className="div"
-      style={{ backgroundColor: "lightGray", height: `100vh` }}
-    >
-      <Navbar />
-      <Searcher handleInput={handleInput} />
-      <ContainerPokemons dataApi={returnProducts()} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div
+              className="div"
+              style={{ backgroundColor: "lightGray", height: `100vh` }}
+            >
+              <Navbar />
+              <Pokemons handleInput={handleInput} dataApi={returnPokemons()} />
+            </div>
+          }
+        />
+        <Route
+          path="/pokemon/:id"
+          element={
+            <div>
+              <Navbar />
+              <PokemonId dataApi={dataApi} />
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

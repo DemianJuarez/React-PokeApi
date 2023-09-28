@@ -1,8 +1,8 @@
 import { PokemonCont } from "./PokemonCont";
-import { Searcher } from "./Searcher";
 
 export const ContainerPokemons = (props) => {
   const { dataApi } = props;
+
   return (
     <div
       className="containerPokemons"
