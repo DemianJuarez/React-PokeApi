@@ -68,6 +68,7 @@ export const PokemonLayout = (props) => {
                   flexDirection: "column",
                   justifyContent: "flex-start",
                   alignItems: "center",
+                  width: "300px",
                 }}
               >
                 <h3>Base Stats</h3>
@@ -162,7 +163,7 @@ export const PokemonLayout = (props) => {
                     style={{
                       width: `${pokemonDetail.stats[4].base_stat}%`,
                       height: "20px",
-                      backgroundColor: "lightgray",
+                      backgroundColor: "brown",
                     }}
                   ></div>
                 </div>
