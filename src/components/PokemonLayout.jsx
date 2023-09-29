@@ -45,7 +45,8 @@ export const PokemonLayout = (props) => {
               width: "100%",
               justifyContent: "space-around",
               alignItems: "center",
-              paddingTop: "1rem",
+              paddingTop: "0.5rem",
+              paddingBottom: "1rem",
             }}
           >
             <div
@@ -71,11 +72,119 @@ export const PokemonLayout = (props) => {
               >
                 <h3>Base Stats</h3>
                 <p>HP: {pokemonDetail.stats[0].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black" /* Color de fondo de la barra */,
+                  }}
+                >
+                  <div
+                    className="barHP"
+                    style={{
+                      width: `${pokemonDetail.stats[0].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "green",
+                    }}
+                  ></div>
+                </div>
                 <p>Attack: {pokemonDetail.stats[1].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black",
+                  }}
+                >
+                  <div
+                    className="barAttack"
+                    style={{
+                      width: `${pokemonDetail.stats[1].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "blue",
+                    }}
+                  ></div>
+                </div>
                 <p>Defense: {pokemonDetail.stats[2].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black",
+                  }}
+                >
+                  <div
+                    className="barDefense"
+                    style={{
+                      width: `${pokemonDetail.stats[2].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "black",
+                    }}
+                  ></div>
+                </div>
                 <p>Special-Attack: {pokemonDetail.stats[3].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black",
+                  }}
+                >
+                  <div
+                    className="barSpecialAttack"
+                    style={{
+                      width: `${pokemonDetail.stats[3].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "orange",
+                    }}
+                  ></div>
+                </div>
                 <p>Special-Defense: {pokemonDetail.stats[4].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black",
+                  }}
+                >
+                  <div
+                    className="barSpecialDefense"
+                    style={{
+                      width: `${pokemonDetail.stats[4].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "lightgray",
+                    }}
+                  ></div>
+                </div>
                 <p>Speed: {pokemonDetail.stats[5].base_stat}</p>
+                <div
+                  className="bar"
+                  style={{
+                    width: `100%`,
+                    height: "20px",
+                    backgroundColor: "gray",
+                    border: "2px solid black",
+                  }}
+                >
+                  <div
+                    className="barSpeed"
+                    style={{
+                      width: `${pokemonDetail.stats[5].base_stat}%`,
+                      height: "20px",
+                      backgroundColor: "red",
+                    }}
+                  ></div>
+                </div>
               </div>
             </div>
             <div
@@ -107,6 +216,7 @@ export const PokemonLayout = (props) => {
                   flexDirection: "row",
                   width: "200px",
                   justifyContent: "space-around",
+                  paddingBottom: "10px",
                 }}
               >
                 {pokemonDetail.types.map((type, index) => (
@@ -137,7 +247,7 @@ export const PokemonLayout = (props) => {
             >
               <div className="containerMovement">
                 <h2>Moves</h2>
-                {pokemonDetail.moves.slice(0, 18).map((move, index) => (
+                {pokemonDetail.moves.slice(0, 15).map((move, index) => (
                   <p key={index} className="moveP">
                     {move.move.name}
                   </p>
