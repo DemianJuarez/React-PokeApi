@@ -242,6 +242,7 @@ export const PokemonLayout = (props) => {
                   width: "200px",
                   justifyContent: "space-around",
                   paddingBottom: "10px",
+                  gap: "3px",
                 }}
               >
                 {pokemonDetail.types.map((type, index) => (
@@ -251,6 +252,9 @@ export const PokemonLayout = (props) => {
                     style={{
                       backgroundColor: colors[type.type.name],
                       borderRadius: "6px",
+                      display: "flex",
+                      justifyContent: "center",
+                      width: "100%",
                     }}
                   >
                     {type.type.name}
