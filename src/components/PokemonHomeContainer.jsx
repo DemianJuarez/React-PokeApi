@@ -17,25 +17,10 @@ export const PokemonHomeContainer = (props) => {
   return (
     <Link to={pokemonDetalle && `/pokemon/${pokemonDetalle.id}`}>
       {pokemonDetalle && (
-        <div
-          key={pokemonDetalle.name}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            background: "linear-gradient(60deg, #FF5733, #33FF57, #5733FF)",
-            width: "300px",
-            height: "300px",
-            alignItems: "center",
-            border: "4px solid black",
-            borderRadius: "25px",
-            fontSize: "24px",
-            boxSizing: "border-box",
-          }}
-        >
+        <div className="containerPokemonHome" key={pokemonDetalle.name}>
           <img
+            className="imagePokemon"
             src={`${pokemonDetalle && pokemonDetalle.sprites.front_default}`}
-            style={{ width: "auto", height: "275px" }}
           ></img>
           <h3>
             {pokemonDetalle && pokemonDetalle.id}-{" "}

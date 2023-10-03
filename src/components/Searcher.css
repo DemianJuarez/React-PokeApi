@@ -1,0 +1,13 @@
+.searcher {
+  display: "flex";
+  justify-content: "center";
+  height: "45px";
+  background-color: "lightgray";
+  padding-top: "20px";
+}
+
+.inputSearchBar {
+  border-radius: "8px";
+  text-align: center;
+  display: flex;
+}

@@ -11,10 +11,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div
-              className="div"
-              style={{ backgroundColor: "lightGray", height: `100vh` }}
-            >
+            <div className="div">
               <Navbar />
               <PokemonsHomePage />
             </div>

@@ -32,48 +32,10 @@ export const PokemonLayout = () => {
   return (
     <>
       {pokemonDetail.sprites.front_default && (
-        <div
-          className="containerScreen"
-          style={{
-            display: "flex",
-            width: "100vw",
-            height: "calc(100vh - 60px)",
-            backgroundColor: "lightGray",
-          }}
-        >
-          <div
-            className="container"
-            style={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "space-around",
-              alignItems: "center",
-              paddingTop: "0.5rem",
-              paddingBottom: "1rem",
-            }}
-          >
-            <div
-              className="statsPokemon"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "26px",
-                height: "100%",
-                width: "228px",
-              }}
-            >
-              <div
-                className="containerStats"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  width: "300px",
-                }}
-              >
+        <div className="containerScreen">
+          <div className="container">
+            <div className="statsPokemon">
+              <div className="containerStats">
                 <h3>Base Stats</h3>{" "}
                 <PokemonStats pokemonDetail={pokemonDetail} />
               </div>
@@ -103,17 +65,7 @@ export const PokemonLayout = () => {
                   height: "400px",
                 }}
               ></img>
-              <div
-                className="types"
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  width: "200px",
-                  justifyContent: "space-around",
-                  paddingBottom: "10px",
-                  gap: "3px",
-                }}
-              >
+              <div className="types">
                 {pokemonDetail.types.map((type, index) => (
                   <p
                     key={index}

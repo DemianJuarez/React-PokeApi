@@ -1,0 +1,52 @@
+.containerScreen {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh-60px);
+  background-color: lightgray;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.statsPokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  height: 100%;
+  width: 228px;
+}
+
+.containerStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+}
+
+.containerPokemon {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 34px;
+  width: 228px;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  gap: 3px;
+}

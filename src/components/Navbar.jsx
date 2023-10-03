@@ -8,34 +8,15 @@ export const Navbar = () => {
 
   return (
     <div className="navbarDiv">
-      <nav
-        className="navbarNav"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "60px",
-          background: "linear-gradient(to bottom right, #FF7F7F, #D32F2F)",
-        }}
-      >
+      <nav className="navbarNav">
         {isPokemonDetailPage && (
-          <Link
-            to="/"
-            style={{
-              position: "absolute",
-              left: "10px",
-              fontSize: "30px",
-              textDecoration: "none",
-              color: "#FFFFFF",
-            }}
-          >
+          <Link to="/" className="linkNavbar">
             Volver
           </Link>
         )}
         <img
+          className="pokeapiLogo"
           src="/public/pokeapi_256.3fa72200.png"
-          style={{ width: "auto", height: "60px" }}
           alt="PokeAPI"
         />
       </nav>

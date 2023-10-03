@@ -27,26 +27,10 @@ export const ContainerPokemons = () => {
   }, []);
 
   return (
-    <div
-      className="containerPokemons"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        flexWrap: "wrap",
-        backgroundColor: "lightgray",
-        boxSizing: "border-box",
-        gap: "20px",
-        padding: "40px",
-      }}
-    >
+    <div className="containerPokemons">
       {pokemonData &&
         returnPokemons().map((pokemon) => (
-          <div
-            className="containerPokemon"
-            style={{ width: "300px", height: "300px" }}
-            key={pokemon.name}
-          >
+          <div className="containerPokemon" key={pokemon.name}>
             <PokemonHomeContainer pokemon={pokemon} />
           </div>
         ))}

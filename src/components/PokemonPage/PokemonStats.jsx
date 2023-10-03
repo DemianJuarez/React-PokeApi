@@ -12,27 +12,11 @@ export const PokemonStats = (props) => {
   return (
     <div>
       {statBars.map((stat, index) => (
-        <div
-          key={index}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <div className="statbars" key={index}>
           <p>
             {stat.label}: {pokemonDetail.stats[index].base_stat}
           </p>
-          <div
-            className="bar"
-            style={{
-              display: "flex",
-              width: "300px",
-              height: "20px",
-              backgroundColor: "gray",
-              border: "2px solid black",
-            }}
-          >
+          <div className="bar">
             <div
               className={`bar${stat.label.replace("-", "")}`}
               style={{
