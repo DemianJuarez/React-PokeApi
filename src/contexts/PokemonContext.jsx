@@ -26,14 +26,24 @@ export const PokemonProvider = ({ children }) => {
     setPokemonDetail(data);
   };
 
+  const getDetail = async (dataApi, setPokemonDetalle) => {
+    const api = `${dataApi.url}`;
+    const response = await fetch(api);
+    const data = await response.json();
+    setPokemonDetalle(data);
+  };
+
   return (
     <PokemonContext.Provider
       value={{
         pokemonData,
         pokemonDetail,
+        search,
         getPokemon,
         getAllPokemons,
         handleChangeInput,
+        getDetail,
+        setPokemonDetail,
       }}
     >
       {children}

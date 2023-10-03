@@ -1,5 +1,5 @@
 import { Navbar } from "./components/Navbar";
-import { Pokemons } from "./pages/PokemonsHomePage";
+import { PokemonsHomePage } from "./pages/PokemonsHomePage";
 import { Routes, Route } from "react-router-dom";
 import { PokemonPage } from "./pages/PokemonPage";
 import { PokemonProvider } from "./contexts/PokemonContext";
@@ -16,7 +16,7 @@ function App() {
               style={{ backgroundColor: "lightGray", height: `100vh` }}
             >
               <Navbar />
-              <Pokemons />
+              <PokemonsHomePage />
             </div>
           }
         />

@@ -1,5 +1,8 @@
-export const Searcher = (props) => {
-  const { handleInput } = props;
+import { useContext } from "react";
+import { PokemonContext } from "../contexts/PokemonContext";
+
+export const Searcher = () => {
+  const { handleInput } = useContext(PokemonContext);
 
   return (
     <div

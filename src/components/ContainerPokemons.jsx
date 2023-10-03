@@ -1,7 +1,30 @@
-import { PokemonCont } from "./PokemonCont";
+import { useContext, useEffect } from "react";
+import { PokemonHomeContainer } from "./PokemonHomeContainer";
+import { PokemonContext } from "../contexts/PokemonContext";
 
-export const ContainerPokemons = (props) => {
-  const { dataApi } = props;
+export const ContainerPokemons = () => {
+  const { pokemonData, search, getAllPokemons } = useContext(PokemonContext);
+
+  const returnPokemons = () => {
+    if (search.length > 0) {
+      const searchMin = search.toLowerCase();
+      const filteredData = pokemonData.filter((pokemon) => {
+        const pokemonTitleMin = pokemon.name.toLowerCase();
+        return pokemonTitleMin.includes(searchMin);
+      });
+
+      return filteredData;
+    } else {
+      let filteredData = "";
+      filteredData = pokemonData;
+      return filteredData;
+    }
+  };
+
+  useEffect(() => {
+    getAllPokemons();
+    console.log("corrio get all pokemons");
+  }, []);
 
   return (
     <div
@@ -17,15 +40,16 @@ export const ContainerPokemons = (props) => {
         padding: "40px",
       }}
     >
-      {dataApi.map((item) => (
-        <div
-          className="containerPokemon"
-          style={{ width: "300px", height: "300px" }}
-          key={item.name}
-        >
-          <PokemonCont dataApi={item} />
-        </div>
-      ))}
+      {pokemonData &&
+        returnPokemons().map((pokemon) => (
+          <div
+            className="containerPokemon"
+            style={{ width: "300px", height: "300px" }}
+            key={pokemon.name}
+          >
+            <PokemonHomeContainer pokemon={pokemon} />
+          </div>
+        ))}
     </div>
   );
 };
