@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PokemonContext } from "../contexts/PokemonContext";
 
 export const Searcher = () => {
-  const { handleInput } = useContext(PokemonContext);
+  const { handleChangeInput } = useContext(PokemonContext);
 
   return (
     <div
@@ -18,7 +18,7 @@ export const Searcher = () => {
       <input
         className="inputSearchBar"
         placeholder="Buscar Pokemon"
-        onChange={handleInput}
+        onChange={handleChangeInput}
         style={{
           borderRadius: "8px",
           textAlign: "center",
