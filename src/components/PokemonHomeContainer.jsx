@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PokemonContext } from "../contexts/PokemonContext";
+import "./PokemonHomeContainer.css";
 export const PokemonHomeContainer = (props) => {
   const { pokemon } = props;
   const [pokemonDetalle, setPokemonDetalle] = useState(null);

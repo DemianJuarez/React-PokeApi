@@ -1,15 +1,15 @@
 .containerPokemonHome {
-  display: "flex";
-  flex-direction: "column";
-  justify-content: "center";
-  background: "linear-gradient(60deg, #FF5733, #33FF57, #5733FF)";
-  width: "300px";
-  height: "300px";
-  align-items: "center";
-  border: "4px solid black";
-  border-radius: "25px";
-  font-size: "24px";
-  box-sizing: "border-box";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(60deg, #ff5733, #33ff57, #5733ff);
+  width: 300px;
+  height: 300px;
+  align-items: center;
+  border: 4px solid black;
+  border-radius: 25px;
+  font-size: 24px;
+  box-sizing: border-box;
 }
 
 .imagePokemon {

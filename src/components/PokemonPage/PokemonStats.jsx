@@ -1,3 +1,5 @@
+import "./PokemonStats.css";
+
 export const PokemonStats = (props) => {
   const { pokemonDetail } = props;
   const statBars = [

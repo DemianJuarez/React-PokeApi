@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../contexts/PokemonContext";
 import { PokemonStats } from "../PokemonPage/PokemonStats";
+import "./PokemonLayout.css";
 
 export const PokemonLayout = () => {
   const { pokemonDetail } = useContext(PokemonContext);
-  console.log(
-    "🚀 ~ file: PokemonLayout.jsx:9 ~ PokemonLayout ~ pokemonDetail:",
-    pokemonDetail
-  );
+
   const colors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -41,7 +39,7 @@ export const PokemonLayout = () => {
               </div>
             </div>
             <div
-              className="containerPokemon"
+              className="containerPokemonss"
               style={{
                 height: "100%",
                 display: "flex",
@@ -72,10 +70,6 @@ export const PokemonLayout = () => {
                     className="typeP"
                     style={{
                       backgroundColor: colors[type.type.name],
-                      borderRadius: "6px",
-                      display: "flex",
-                      justifyContent: "center",
-                      width: "100%",
                     }}
                   >
                     {type.type.name}
@@ -83,18 +77,7 @@ export const PokemonLayout = () => {
                 ))}
               </div>
             </div>
-            <div
-              className="movementPokemon"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                fontSize: "20px",
-                width: "228px",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="movementPokemon">
               <div className="containerMovement">
                 <h2>Moves</h2>
                 {pokemonDetail.moves.slice(0, 15).map((move, index) => (

@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { PokemonHomeContainer } from "./PokemonHomeContainer";
 import { PokemonContext } from "../contexts/PokemonContext";
+import "./ContainerPokemons.css";
 
 export const ContainerPokemons = () => {
   const { pokemonData, search, getAllPokemons } = useContext(PokemonContext);

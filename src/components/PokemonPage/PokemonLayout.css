@@ -1,7 +1,7 @@
 .containerScreen {
   display: flex;
   width: 100vw;
-  height: calc(100vh-60px);
+  height: calc(100vh - 60px);
   background-color: lightgray;
 }
 
@@ -32,7 +32,7 @@
   width: 300px;
 }
 
-.containerPokemon {
+.containerPokemonss {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -49,4 +49,21 @@
   justify-content: space-around;
   padding-bottom: 10px;
   gap: 3px;
+}
+
+.typeP {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.movementPokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 20px;
+  width: 228px;
+  flex-wrap: wrap;
 }
