@@ -32,6 +32,12 @@
   width: 300px;
 }
 
+.imageOnlyPokemons {
+  display: flex;
+  width: auto;
+  height: 400px;
+}
+
 .containerPokemonss {
   height: 100%;
   display: flex;

@@ -3,7 +3,12 @@ import { PokemonContext } from "../contexts/PokemonContext";
 import "./Searcher.css";
 
 export const Searcher = () => {
-  const { handleChangeInput } = useContext(PokemonContext);
+  const { setSearch } = useContext(PokemonContext);
+
+  const handleChangeInput = (e) => {
+    console.log(e.target.value);
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="searcher">
@@ -11,7 +16,7 @@ export const Searcher = () => {
         className="inputSearchBar"
         placeholder="Buscar Pokemon"
         onChange={handleChangeInput}
-      ></input>
+      />
     </div>
   );
 };

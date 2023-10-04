@@ -14,11 +14,6 @@ export const PokemonProvider = ({ children }) => {
     setPokemonData(data.results);
   };
 
-  const handleChangeInput = (e) => {
-    console.log(e.target.value);
-    setSearch(e.target.value);
-  };
-
   const getPokemon = async (id) => {
     const api = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const response = await fetch(api);
@@ -41,9 +36,9 @@ export const PokemonProvider = ({ children }) => {
         search,
         getPokemon,
         getAllPokemons,
-        handleChangeInput,
         getDetail,
         setPokemonDetail,
+        setSearch,
       }}
     >
       {children}

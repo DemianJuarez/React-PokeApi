@@ -1,8 +1,9 @@
-import { Navbar } from "./components/Navbar";
 import { PokemonsHomePage } from "./pages/PokemonsHomePage";
 import { Routes, Route } from "react-router-dom";
 import { PokemonPage } from "./pages/PokemonPage";
 import { PokemonProvider } from "./contexts/PokemonContext";
+import "./App.css";
+import { LayoutPage } from "./layout/LayoutPage";
 
 function App() {
   return (
@@ -11,19 +12,21 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="div">
-              <Navbar />
-              <PokemonsHomePage />
-            </div>
+            <LayoutPage>
+              <div className="bgdiv">
+                <PokemonsHomePage />
+              </div>
+            </LayoutPage>
           }
         />
         <Route
           path="/pokemon/:id"
           element={
-            <div>
-              <Navbar />
-              <PokemonPage />
-            </div>
+            <LayoutPage>
+              <div>
+                <PokemonPage />
+              </div>
+            </LayoutPage>
           }
         />
       </Routes>

@@ -5,7 +5,7 @@ import "./PokemonHomeContainer.css";
 export const PokemonHomeContainer = (props) => {
   const { pokemon } = props;
   const [pokemonDetalle, setPokemonDetalle] = useState(null);
-  const { getDetail } = useContext(PokemonContext);
+  const { getDetail, setSearch } = useContext(PokemonContext);
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -13,6 +13,7 @@ export const PokemonHomeContainer = (props) => {
 
   useEffect(() => {
     pokemon && getDetail(pokemon, setPokemonDetalle);
+    setSearch("");
   }, []);
 
   return (
@@ -21,11 +22,10 @@ export const PokemonHomeContainer = (props) => {
         <div className="containerPokemonHome" key={pokemonDetalle.name}>
           <img
             className="imagePokemon"
-            src={`${pokemonDetalle && pokemonDetalle.sprites.front_default}`}
-          ></img>
+            src={`${pokemonDetalle.sprites.front_default}`}
+          />
           <h3>
-            {pokemonDetalle && pokemonDetalle.id}-{" "}
-            {capitalize(pokemonDetalle.name)}
+            {pokemonDetalle.id}- {capitalize(pokemonDetalle.name)}
           </h3>
         </div>
       )}

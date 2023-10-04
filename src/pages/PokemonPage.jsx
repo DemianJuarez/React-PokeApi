@@ -11,14 +11,14 @@ export const PokemonPage = () => {
     pokemonData,
     getAllPokemons,
   } = useContext(PokemonContext);
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     getAllPokemons();
   }, []);
 
-  let num = Number(id - 1);
-  let dataPok = pokemonData && pokemonData[num];
+  const num = Number(id - 1);
+  const dataPok = pokemonData && pokemonData[num];
 
   useEffect(() => {
     setPokemonDetail(null);
