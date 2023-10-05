@@ -6,6 +6,15 @@ export const PokemonProvider = ({ children }) => {
   const [pokemonData, setPokemonData] = useState(null);
   const [pokemonDetail, setPokemonDetail] = useState(null);
   const [search, setSearch] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+
+  const changeVisualMode = () => {
+    setDarkMode(!darkMode);
+    console.log(
+      "🚀 ~ file: PokemonContext.jsx:13 ~ changeVisualMode ~ darkMode:",
+      darkMode
+    );
+  };
 
   const getAllPokemons = async () => {
     const api = "https://pokeapi.co/api/v2/pokemon/?limit=151";
@@ -39,6 +48,8 @@ export const PokemonProvider = ({ children }) => {
         getDetail,
         setPokemonDetail,
         setSearch,
+        darkMode,
+        changeVisualMode,
       }}
     >
       {children}

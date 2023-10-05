@@ -2,7 +2,6 @@ import { PokemonsHomePage } from "./pages/PokemonsHomePage";
 import { Routes, Route } from "react-router-dom";
 import { PokemonPage } from "./pages/PokemonPage";
 import { PokemonProvider } from "./contexts/PokemonContext";
-import "./App.css";
 import { LayoutPage } from "./layout/LayoutPage";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
           path="/"
           element={
             <LayoutPage>
-              <div className="bgdiv">
+              <div>
                 <PokemonsHomePage />
               </div>
             </LayoutPage>

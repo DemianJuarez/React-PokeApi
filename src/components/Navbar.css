@@ -7,12 +7,21 @@
   background: linear-gradient(to bottom right, #ff7f7f, #d32f2f);
 }
 
+.dark-mode .navbarNav {
+  background: darkblue;
+}
+
 .linkNavbar {
   position: absolute;
   left: 10px;
   font-size: 30px;
   text-decoration: none;
-  color: #ffffff;
+  list-style: none;
+  color: black;
+}
+
+.darkMode {
+  color: white;
 }
 
 .pokeapiLogo {
